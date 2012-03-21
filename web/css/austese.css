@@ -1,0 +1,6 @@
+.navbar .brand { padding-top : 2px; padding-bottom:2px;}
+body, p, text-area  {font-family: 'Gudea', Calibri, Helvetica, Arial, sans-serif; text-shadow:0 0 1px transparent;}
+.hero-unit {padding:20px}
+.page-header-spacer {padding-top:60px}
+.footer {margin-top: 45px; padding: 35px 0 36px; border-top: 1px solid #e5e5e5;}
+.navbar .nav > li > a {line-height:39px;}
