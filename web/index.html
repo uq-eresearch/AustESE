@@ -91,6 +91,12 @@
             <h2>Recent tweets</h2>
             <div style="padding-top:1em" id="jstwitter"></div>
       </section> 
+      <section id="blog">
+          <div class="page-header">
+            <h2>Recent blog posts</h2>
+          </div>
+          <ul style="padding-top:1em" id="jsblog"></ul>
+      </section> 
       <footer class="footer">
           <div class="row">
               <p style="padding-right:17px" class="pull-left">
@@ -120,12 +126,15 @@
     </div>
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/tweets.js"></script>
+    <script src="js/jquery.parss.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        function activateLink(link){
-            link.parent('li').addClass('active')
-                .siblings('.active').removeClass('active')
-        }
+        $(document).ready(function(){
+          $("#jsblog").PaRSS(
+            "http://austese.wordpress.com/feed/", 5,", jS M Y",false
+          );
+        });
+  
     </script>
   </body>
 </html>
