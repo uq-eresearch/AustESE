@@ -19,9 +19,7 @@ if (floor(abs(($currentTime-$cacheDate) / 3600)) <= $_GET['hours'] && $cacheDate
     fclose($cachefile);
  
 } else { //renew the cache
- 
-        $data = file_get_contents('https://search.twitter.com/search.json?q=austese');   
-
+    $data = file_get_contents('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=austese&exclude_replies=true');
      
     // update cache file
     $cachefile = fopen($cache, 'wb');  

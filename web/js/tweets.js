@@ -5,7 +5,7 @@ JQTWEET = {
     appendTo: '#jstwitter',
     loadTweets: function() {
         var request = {
-            expiry: JQTWEET.cacheExpiry,
+            expiry: JQTWEET.cacheExpiry
         };
 
         $.ajax({
@@ -14,17 +14,19 @@ JQTWEET = {
             dataType: 'json',
             data: request,
             success: function(data, textStatus, xhr) {
-                var text, name, html = '<table class="table table-condensed"><tr><td width="60px"><img class="thumbnail" src="IMAGE_URL" alt="user"/></td><td style="vertical-align:middle">TWEET_TEXT<br/>AGO by USER</td></tr></table>';
+            var tweetdata, html = '<table class="table table-condensed"><tr><td width="60px"><img class="thumbnail" src="IMAGE_URL" alt="user"/></td><td style="vertical-align:middle">TWEET_TEXT<br/>AGO by USER</td></tr></table>';
                 try {  
-                    data = data['results'];
                     for (var i = 0; i < data.length && i < JQTWEET.numTweets; i++) {
-                         
-                        name = data[i].from_user_name;
+                        if (data[i].retweeted_status){
+                            tweetdata = data[i].retweeted_status;
+                        } else {
+                            tweetdata = data[i];
+                        }
                         $(JQTWEET.appendTo).append( 
-                            html.replace('TWEET_TEXT', JQTWEET.ify.clean(data[i].text) )
-                                .replace(/USER/g, name)
-                                .replace('IMAGE_URL',data[i].profile_image_url)
-                                .replace('AGO', JQTWEET.timeAgo(data[i].created_at) )
+                            html.replace('TWEET_TEXT', JQTWEET.ify.clean(tweetdata.text))
+                                .replace(/USER/g, tweetdata.user.screen_name)
+                                .replace('IMAGE_URL',tweetdata.user.profile_image_url)
+                                .replace('AGO', JQTWEET.timeAgo(tweetdata.created_at))
                         );
                     } 
                 } catch (e) {
