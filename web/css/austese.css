@@ -7,4 +7,5 @@ body, p, text-area  {font-family: 'Gudea', Calibri, Helvetica, Arial, sans-serif
 body {
     padding-top: 80px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
+.brand img {margin-top:3px}
 /* FF6600 */
