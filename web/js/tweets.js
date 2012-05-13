@@ -1,6 +1,6 @@
 /** Reuses code from http://www.queness.com/post/10778/create-a-twitter-feed-with-hash-tag-and-cache-support */
 JQTWEET = {
-    numTweets: 5, //number of tweets
+    numTweets: 10, //number of tweets
     cacheExpiry: 2, //get the new cache in 2 hours
     appendTo: '#jstwitter',
     loadTweets: function() {
@@ -14,17 +14,21 @@ JQTWEET = {
             dataType: 'json',
             data: request,
             success: function(data, textStatus, xhr) {
-            var tweetdata, html = '<table class="table table-condensed"><tr><td width="60px"><img class="thumbnail" src="IMAGE_URL" alt="user"/></td><td style="vertical-align:middle">TWEET_TEXT<br/>AGO by USER</td></tr></table>';
+            var tweetdata, user, html = '<table class="table table-condensed"><tr><td width="60px"><img class="thumbnail" src="IMAGE_URL" alt="user"/></td><td style="vertical-align:middle">TWEET_TEXT<br/>AGO by USER</td></tr></table>';
                 try {  
                     for (var i = 0; i < data.length && i < JQTWEET.numTweets; i++) {
                         if (data[i].retweeted_status){
                             tweetdata = data[i].retweeted_status;
+                            user = tweetdata.user.screen_name + ", retweeted by AustESE";
                         } else {
                             tweetdata = data[i];
+                            user = tweetdata.user.screen_name;
                         }
+
+
                         $(JQTWEET.appendTo).append( 
                             html.replace('TWEET_TEXT', JQTWEET.ify.clean(tweetdata.text))
-                                .replace(/USER/g, tweetdata.user.screen_name)
+                                .replace(/USER/g, user)
                                 .replace('IMAGE_URL',tweetdata.user.profile_image_url)
                                 .replace('AGO', JQTWEET.timeAgo(tweetdata.created_at))
                         );
