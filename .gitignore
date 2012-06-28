@@ -1,2 +1,4 @@
 .project
 data/PlacesData/bin
+data/PlacesData/insert_places.js
+data/PlacesData/Gazetteer.csv
