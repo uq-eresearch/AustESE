@@ -1,4 +1,4 @@
-This PlaceCsvToJson transforms data from the Geoscience Australia Gazetteer 2010 to JSON format for loading into MongoDB.
+PlaceCsvToJson transforms data from the Geoscience Australia Gazetteer 2010 to JSON format for loading into MongoDB.
 
 The source data can be downloaded from: http://www.ga.gov.au/meta/ANZCW0703014255.html
 
