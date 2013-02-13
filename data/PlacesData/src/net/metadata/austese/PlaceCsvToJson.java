@@ -76,14 +76,20 @@ class Place {
   @Override
   public String toString() {
     StringBuffer sb = new StringBuffer();
+    StringBuffer metadatasb = new StringBuffer();
+    metadatasb.append("state: \"" + state.replace("\"","") + "\"");
+    metadatasb.append(", name: \"" + name.replace("\"","") + "\"");
+    metadatasb.append(", featureCode: \"" + featureCode.replace("\"","") + "\"");
+    metadatasb.append(", longitude: \"" + longitude.replace("\"","") + "\"");
+    metadatasb.append(", latitude: \"" + latitude.replace("\"","") + "\"");
+    
     sb.append("{");
-    sb.append("_id: \"" + id.replace("\"","") + "\"");
-    sb.append(", state: \"" + state.replace("\"","") + "\"");
-    sb.append(", name: \"" + name.replace("\"","") + "\"");
-    sb.append(", featureCode: \"" + featureCode.replace("\"","") + "\"");
-    sb.append(", longitude: \"" + longitude.replace("\"","") + "\"");
-    sb.append(", latitude: \"" + latitude.replace("\"","") + "\"");
-    sb.append("}");
+    sb.append("gazetteId: \"" + id.replace("\"","") + "\"");
+    sb.append(", _revisions: [{");
+    sb.append(metadatasb.toString());
+    sb.append("}], metadata: {");
+    sb.append(metadatasb.toString());
+    sb.append("}}");
     return sb.toString();
   } 
 }
