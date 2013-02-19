@@ -149,58 +149,25 @@
         <ObjectProperty IRI="#embodies"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_abstract"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#has_action"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_alternative_title"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_annotation"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_audience"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#has_binder"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_biography"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_current_location"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_description"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_digital_surrogate"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_dimensions"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#has_editor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_epigraph"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_format"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_image"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_literary_agent"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_location"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_medium"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_member"/>
@@ -230,16 +197,7 @@
         <ObjectProperty IRI="#has_serialisation"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_title"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#has_type"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_type_face"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#has_watermark"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_writer"/>
@@ -257,16 +215,7 @@
         <ObjectProperty IRI="#is_associated_with"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#is_codex"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_composition"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#is_contained_in"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_edition"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_embodiment_of"/>
@@ -275,19 +224,7 @@
         <ObjectProperty IRI="#is_employed_by"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#is_galley"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_magazine"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_manuscript"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#is_member_of"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_newspaper"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_part_of"/>
@@ -299,16 +236,7 @@
         <ObjectProperty IRI="#is_serialisation_of"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#is_typescript"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_writer"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#participated_in"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#participation_type"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#realises"/>
@@ -390,6 +318,75 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/2006/time#unitType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_abstract"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_alternative_title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_audience"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_biography"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_dimensions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_epigraph"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_format"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_medium"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_typeface"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_watermark"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_codex"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_composition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_edition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_galley_proofs"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_magazine"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_manuscript"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_newspaper"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_typescript"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_writer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#participation_type"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.w3.org/2006/time#day"/>
@@ -1064,15 +1061,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_abstract"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_action"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_alternative_title"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1080,23 +1069,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_audience"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_binder"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_biography"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_current_location"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_description"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1104,19 +1077,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_dimensions"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_editor"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_epigraph"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_format"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1125,14 +1086,6 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_literary_agent"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_location"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_medium"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1172,19 +1125,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_title"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_type"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_type_face"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_watermark"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1208,19 +1149,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_codex"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_composition"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_contained_in"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_edition"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1232,23 +1161,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_galley"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_magazine"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_manuscript"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_member_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_newspaper"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1264,19 +1177,7 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_typescript"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_writer"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#participated_in"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#participation_type"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1514,6 +1415,98 @@
         <ObjectProperty IRI="http://www.w3.org/2006/time#unitType"/>
         <Class IRI="http://www.w3.org/2006/time#TemporalUnit"/>
     </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_abstract"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_alternative_title"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_audience"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_biography"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_description"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_dimensions"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_epigraph"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_format"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_location"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_medium"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_title"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_typeface"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#has_watermark"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_codex"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_composition"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_edition"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_galley_proofs"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_magazine"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_manuscript"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_newspaper"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_typescript"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_writer"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#participation_type"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="http://www.w3.org/2006/time#day"/>
         <Class IRI="http://www.w3.org/2006/time#DateTimeDescription"/>
@@ -1732,23 +1725,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_abstract</IRI>
-        <Literal>Associates an entity to a text field for writing abstracts.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_action</IRI>
         <Literal>An EVENT can have one or more ACTIONS, which are verbs performed by AGENTS in the context of the EVENT.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_alternative_title</IRI>
-        <Literal>Under certain CREATION or PRODUCTION conditions, an ARTEFACT can have a title that is alternative to that given to the WORK.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_audience</IRI>
-        <Literal>Used to identify an audience type or individual. For example, a novel might be written for a popular audience, or a writer might execute revisions with specific readers in mind.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1757,39 +1735,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_biography</IRI>
-        <Literal>Associates an AGENT to a text field used for recording biographical information.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_description</IRI>
-        <Literal>Associates an ARTEFACT, VERSION, or WORK to a text field that is used for recording descriptive information.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_digital_surrogate</IRI>
         <Literal>Associates and ARTEFACT with a DIGITAL OBJECT such as an image or transcription.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_dimensions</IRI>
-        <Literal>Associates an ARTEFACT with a field that records liear measurements.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_editor</IRI>
         <Literal>Associates and ARTEFACT with and AGENT who performs the ACTION, &quot;editing&quot;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_epigraph</IRI>
-        <Literal>Associates an ARTEFACT with a field that records information about the epigraph.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_format</IRI>
-        <Literal>Associates an ARTEFACT with properties such as &quot;manuscript&quot;, &quot;typescript&quot;, &quot;paperback&quot;, &quot;hardback&quot; etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1801,16 +1753,6 @@
         <IRI>#has_literary_agent</IRI>
         <Literal>Associates and ARTEFACT with an AGENT who performs the ACTION, &quot;represents&quot;.
 </Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_location</IRI>
-        <Literal>Associates an ARTEFACT with a particular institutional and/or geographical location.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_medium</IRI>
-        <Literal>Associates an ARTEFACT with a particular medium such as lead pencil, blank ink, blue pencil etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1859,16 +1801,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_type_face</IRI>
-        <Literal>Associates an ARTEFACT with a particular type face.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#has_watermark</IRI>
-        <Literal>Associates an ARTEFACT with a particular Watermark.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_writer</IRI>
         <Literal>Associates an ARTEFACT with and AGENT who performs the ACTION, &quot;writing&quot;.</Literal>
     </AnnotationAssertion>
@@ -1889,11 +1821,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#is_codex</IRI>
-        <Literal>Designates the form of an ARTEFACT as CODEX (ie book form).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_contained_in</IRI>
         <Literal>An assertion linking a VERSION to an ARTEFACT when the artefact is not extant but is known to have existed (eg lost manuscript, discarded galley proofs etc.) Where artefacts are extant, they are linked to a version via the digital object that acts as a surrogate for the material</Literal>
     </AnnotationAssertion>
@@ -1909,23 +1836,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#is_magazine</IRI>
-        <Literal>Associates an ARTEFACT with the form, &quot;magazine&quot;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#is_manuscript</IRI>
-        <Literal>Associates an ARTEFACT with the form, &quot;manuscript&quot;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_member_of</IRI>
         <Literal>Associates and AGENT with an ORGANISATION.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#is_newspaper</IRI>
-        <Literal>Associates and ARTEFACT with the form, &quot;newspaper&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1941,21 +1853,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_serialisation_of</IRI>
         <Literal>Associates with a WORK a particular VERSION which is embodied in an ARTEFACT as a serialisation.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#is_typescript</IRI>
-        <Literal>Associates an ARTEFACT with the form, &quot;typescript&quot;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#is_writer</IRI>
-        <Literal>Associates an AGENT with the role, &quot;writer&quot;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#participation_type</IRI>
-        <Literal>Associates an AGENT with an ACTION.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
