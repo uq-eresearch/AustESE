@@ -134,10 +134,19 @@
         <ObjectProperty IRI="#acquires"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#annotates"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#at_time"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#binds"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#created_by"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#creates"/>
@@ -146,7 +155,13 @@
         <ObjectProperty IRI="#destroys"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#edits"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#embodies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#employs"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_action"/>
@@ -218,10 +233,16 @@
         <ObjectProperty IRI="#is_contained_in"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#is_destroyed_by"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#is_embodiment_of"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_employed_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_image_of"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_member_of"/>
@@ -233,16 +254,40 @@
         <ObjectProperty IRI="#is_realisation_of"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#is_represented_by"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#is_serialisation_of"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#next"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#participated_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#previous"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#publishes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reads"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#realises"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#represents"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#serialises"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#writes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
@@ -1051,11 +1096,23 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#annotates"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#at_time"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#binds"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#contains"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#created_by"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1067,7 +1124,15 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#edits"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#embodies"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#employs"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1163,11 +1228,19 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_destroyed_by"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_embodiment_of"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_employed_by"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_image_of"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1183,11 +1256,35 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_represented_by"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_serialisation_of"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#next"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#participated_in"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#previous"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#prints"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#publishes"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#reads"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1199,6 +1296,14 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#serialises"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#writes"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="http://www.w3.org/2006/time#intervalBefore"/>
         <ObjectProperty IRI="http://www.w3.org/2006/time#before"/>
     </SubObjectPropertyOf>
@@ -1207,8 +1312,84 @@
         <ObjectProperty IRI="#acquires"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#has_annotation"/>
+        <ObjectProperty IRI="#annotates"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_binder"/>
+        <ObjectProperty IRI="#binds"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#contains"/>
         <ObjectProperty IRI="#is_contained_in"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#creates"/>
+        <ObjectProperty IRI="#created_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#destroys"/>
+        <ObjectProperty IRI="#is_destroyed_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_editor"/>
+        <ObjectProperty IRI="#edits"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_embodiment_of"/>
+        <ObjectProperty IRI="#embodies"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_employed_by"/>
+        <ObjectProperty IRI="#employs"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_image"/>
+        <ObjectProperty IRI="#is_image_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_member"/>
+        <ObjectProperty IRI="#is_member_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_part"/>
+        <ObjectProperty IRI="#is_part_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#participated_in"/>
+        <ObjectProperty IRI="#has_participant"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_printer"/>
+        <ObjectProperty IRI="#prints"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_publisher"/>
+        <ObjectProperty IRI="#publishes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_reader"/>
+        <ObjectProperty IRI="#reads"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_realisation"/>
+        <ObjectProperty IRI="#realises"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_serialisation"/>
+        <ObjectProperty IRI="#serialises"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_writer"/>
+        <ObjectProperty IRI="#writes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#is_realisation_of"/>
+        <ObjectProperty IRI="#realises"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#represents"/>
+        <ObjectProperty IRI="#is_represented_by"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="http://www.w3.org/2006/time#before"/>
@@ -1262,6 +1443,10 @@
         <Class IRI="#Work"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#employs"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_action"/>
         <Class IRI="#Event"/>
     </ObjectPropertyDomain>
@@ -1270,7 +1455,19 @@
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_digital_surrogate"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_editor"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_image"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_image"/>
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1284,6 +1481,18 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_member"/>
         <Class IRI="#Organisation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_part"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_part"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_part"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_participant"/>
@@ -1326,6 +1535,10 @@
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#involves"/>
+        <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_acquired_by"/>
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
@@ -1334,8 +1547,24 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_contained_in"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_embodiment_of"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_employed_by"/>
         <Class IRI="#Organisation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_image_of"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_image_of"/>
+        <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_member_of"/>
@@ -1346,6 +1575,26 @@
         <Class IRI="#Organisation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_part_of"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_part_of"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_part_of"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_realisation_of"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_represented_by"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#participated_in"/>
         <Class IRI="#Action"/>
     </ObjectPropertyDomain>
@@ -1354,7 +1603,31 @@
         <Class IRI="#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prints"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#publishes"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reads"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#represents"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#serialises"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#writes"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1450,6 +1723,10 @@
         <Class IRI="#Version"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#employs"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_action"/>
         <Class IRI="#Action"/>
     </ObjectPropertyRange>
@@ -1458,8 +1735,16 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_digital_surrogate"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_editor"/>
         <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_image"/>
+        <Class IRI="#Artefact"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_literary_agent"/>
@@ -1468,6 +1753,18 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_member"/>
         <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_part"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_part"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_part"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_participant"/>
@@ -1506,6 +1803,10 @@
         <Class IRI="#Place"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#involves"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#is_acquired_by"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
@@ -1514,20 +1815,72 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_contained_in"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_embodiment_of"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#is_employed_by"/>
         <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_image_of"/>
+        <Class IRI="#Artefact"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_member_of"/>
         <Class IRI="#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_part_of"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_part_of"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_part_of"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_realisation_of"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_represented_by"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#participated_in"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#prints"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#publishes"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reads"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#represents"/>
         <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#serialises"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#writes"/>
+        <Class IRI="#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
@@ -1693,6 +2046,110 @@
         <DataProperty IRI="#participation_type"/>
         <DataProperty abbreviatedIRI=":topDataProperty"/>
     </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_alternative_title"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_alternative_title"/>
+        <Class IRI="#Version"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_alternative_title"/>
+        <Class IRI="#Work"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_audience"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_biography"/>
+        <Class IRI="#Agent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_description"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_description"/>
+        <Class IRI="#Version"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_description"/>
+        <Class IRI="#Work"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_dimensions"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_location"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_location"/>
+        <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_medium"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_title"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_title"/>
+        <Class IRI="#Version"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_title"/>
+        <Class IRI="#Work"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_typeface"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_watermark"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_codex"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_composition"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_galley_proofs"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_magazine"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_manuscript"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_newspaper"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_typescript"/>
+        <Class IRI="#Artefact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#is_writer"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <Class IRI="#Production"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://www.w3.org/2006/time#day"/>
         <Class IRI="http://www.w3.org/2006/time#DateTimeDescription"/>
