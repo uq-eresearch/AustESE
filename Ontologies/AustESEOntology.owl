@@ -1376,6 +1376,10 @@
         <ObjectProperty IRI="#is_image_of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#has_literary_agent"/>
+        <ObjectProperty IRI="#represents"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#is_member_of"/>
         <ObjectProperty IRI="#has_member"/>
     </InverseObjectProperties>
@@ -1564,7 +1568,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_presence"/>
-        <Class IRI="#Event"/>
+        <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_printer"/>
@@ -1589,6 +1593,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_writer"/>
         <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#influences"/>
@@ -1888,7 +1896,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_presence"/>
-        <Class IRI="#Agent"/>
+        <Class IRI="#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_printer"/>
@@ -1917,6 +1925,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#in_place"/>
         <Class IRI="#Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#influences"/>
@@ -2568,6 +2580,11 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#binds</IRI>
+        <Literal>Identifies the AGENT responsible for the binding of an ARTEFACT (ie book or other codex).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#contains</IRI>
         <Literal>An assertion linking a VERSION to an ARTEFACT when the artefact is not extant but is known to have existed (eg lost manuscript, discarded galley proofs etc.) Where artefacts are extant, they are linked to a version via the digital object that acts as a surrogate for the material</Literal>
     </AnnotationAssertion>
@@ -2583,8 +2600,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#edits</IRI>
+        <Literal>Links an AGENT to an ARTEFACT as an EDITOR, attributing responsibility for variation in a subsequent ARTEFACT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#embodies</IRI>
         <Literal>A VERSION is embodied in the DIGITAL OBJECT that acts as a surrogate for an ARTEFACT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#employs</IRI>
+        <Literal>Links to AGENTS to identify one as the employee of the other.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_author</IRI>
+        <Literal>Distinct from WRITER which denotes an active role in the CREATION of an ARTEFACT, AUTHOR is a more general term of attribution at the WORK level. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2620,7 +2652,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_participant</IRI>
-        <Literal>Associates an ACTION with an AGENT</Literal>
+        <Literal>Associates an EVENT with an AGENT</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2669,13 +2701,30 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#includes</IRI>
+        <Literal>Associates two WORKS when one is included as a part of the other, such as in the case of collections of poetry or short stories.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#involves</IRI>
         <Literal>Links an ARTEFACT to an EVENT to specify that the artefact was used in the creation of a new artefact (eg when a manuscript is used as setting copy by a printer)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_acquired_by</IRI>
-        <Literal>Associates an ARTEFACT with an AGENT who performs the ACTION, &quot;acquiring&quot;.</Literal>
+        <Literal>Associates an ARTEFACT with an AGENT who performs the ACTION, &quot;acquiring&quot;. To be used in describing the provenance of a particular artefact.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#is_associated_with</IRI>
+        <Literal>Relates two AGENTS with an undefined association to define acquaintances.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#is_author_of</IRI>
+        <Literal>Attributes authorship at the WORK level and is distinct from WRITER which describes a more active participation in the creation of an ARTEFACT.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
