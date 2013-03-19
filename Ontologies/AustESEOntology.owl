@@ -164,6 +164,9 @@
         <ObjectProperty IRI="#employs"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#has_adaptation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_annotation"/>
     </Declaration>
     <Declaration>
@@ -209,6 +212,9 @@
         <ObjectProperty IRI="#has_realisation"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#has_review"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_serialisation"/>
     </Declaration>
     <Declaration>
@@ -231,6 +237,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_acquired_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_adaptation_of"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_associated_with"/>
@@ -300,6 +309,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#represents"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reviews"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#serialises"/>
@@ -462,6 +474,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#is_newspaper"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#is_periodical_issue"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#is_promoter"/>
@@ -1132,6 +1147,10 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_adaptation"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_annotation"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -1192,6 +1211,10 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_review"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_serialisation"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -1221,6 +1244,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_acquired_by"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_adaptation_of"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1316,6 +1343,10 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#reviews"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#serialises"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -1368,6 +1399,10 @@
         <ObjectProperty IRI="#employs"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#is_adaptation_of"/>
+        <ObjectProperty IRI="#has_adaptation"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#is_author_of"/>
         <ObjectProperty IRI="#has_author"/>
     </InverseObjectProperties>
@@ -1408,12 +1443,16 @@
         <ObjectProperty IRI="#has_realisation"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#has_review"/>
+        <ObjectProperty IRI="#reviews"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#serialises"/>
         <ObjectProperty IRI="#has_serialisation"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#has_writer"/>
         <ObjectProperty IRI="#writes"/>
+        <ObjectProperty IRI="#has_writer"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#is_influenced_by"/>
@@ -1515,6 +1554,10 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_adaptation"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_annotation"/>
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
@@ -1587,6 +1630,10 @@
         <Class IRI="#Work"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_review"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_serialisation"/>
         <Class IRI="#Work"/>
     </ObjectPropertyDomain>
@@ -1613,6 +1660,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_acquired_by"/>
         <Class IRI="#Artefact"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_adaptation_of"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_associated_with"/>
@@ -1704,6 +1755,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#represents"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reviews"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1851,6 +1906,10 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_adaptation"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_author"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
@@ -1915,6 +1974,10 @@
         <Class IRI="#Version"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_review"/>
+        <Class IRI="#Work"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_serialisation"/>
         <Class IRI="#Artefact"/>
     </ObjectPropertyRange>
@@ -1941,6 +2004,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_acquired_by"/>
         <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_adaptation_of"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_associated_with"/>
@@ -2045,6 +2112,18 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#represents"/>
         <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reviews"/>
+        <Class IRI="#Artefact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reviews"/>
+        <Class IRI="#Version"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reviews"/>
+        <Class IRI="#Work"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#serialises"/>
@@ -2232,6 +2311,10 @@
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_newspaper"/>
+        <DataProperty abbreviatedIRI=":topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#is_periodical_issue"/>
         <DataProperty abbreviatedIRI=":topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -2520,13 +2603,28 @@
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Agent</IRI>
+        <Literal>A participant in a particular event. Agents may be a  Person, Organisation or Group.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Artefact</IRI>
-        <Literal>A concept that stands for an extant or non-extant material thing such as a manuscript, book, newspaper, magazine etc. In an electronic edition, an ARTEFACT will have a digital surrogate in the form of a DIGITAL OBJECT (eg image, transcription, audio file etc.).</Literal>
+        <Literal>A concept that stands for a material thing such as a manuscript, book, newspaper, magazine etc. Beyond standing for unique artefacts such as manuscripts, it is synonymous with a FRBR Item, thereby standing for the one physical copy of a particular edition or periodical that is employed for the purposes of bibliographical description.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Artefact_part</IRI>
+        <Literal>Any subsection of an artefact, such as a sheet, page, gathering, or any designated area of these.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Creation</IRI>
         <Literal>A CREATION EVENT leads to the creation of a pre-publication artefact such as notes, manuscript, or typescript. Such events have a duration that continues until an artefact is complete or set aside.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal>An EVENT marks a moment in time or a duration of time in which one or more AGENTS participate in an endeavour that results in the production of an ARTEFACT. EVENTS have the sub-classe Creation, Production, and Reception to better capture the sometimes multi-faceted acts of composition, publication, and reading. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2545,13 +2643,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Place</IRI>
+        <Literal>A particular locality.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Production</IRI>
-        <Literal>A PRODUCTION EVENT leads to the creation of an ARTEFACT designed for publication (eg book, magazine, newspaper). A PRODUCTION EVENT is best seen as a project that has a duration with projected and unprojected outcomes. In book production this is similar to the relationship between the concepts of edition and impression. The PRODUCTION EVENT is the &quot;edition&quot; and the impressions are the material outcomes that are created at intervals. Like an edition, the PRODUCTION EVENT ends when the type is destroyed or distributed. In most cases, the impression and edition are inferred through an examination and description of one extant artefact.</Literal>
+        <Literal>A PRODUCTION EVENT leads to the creation of an ARTEFACT designed for publication (eg book, magazine, newspaper). A PRODUCTION EVENT is best seen as a project that has a duration with projected and unprojected outcomes. In book production this is similar to the relationship between the concepts of edition and impression. The PRODUCTION EVENT is the &quot;edition&quot; and the impressions are the material outcomes that are created at intervals. Like an edition, the PRODUCTION EVENT ends when the type is destroyed or distributed. In most cases, the impression and edition are inferred through an examination and description of one extant ARTEFACT. Another type of PRODUCTION EVENT is a &quot;serialisation&quot; in which a WORK is realised in  multiple instalments over a specified period of time.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Reception</IRI>
-        <Literal>A RECEPTION EVENT leads to the creation of a written response to a reading of a particular WORK. This is not a single reading, but the duration of a PERSON&#39;s engagement with the work over time. </Literal>
+        <Literal>A RECEPTION EVENT leads to the creation of a written response to a reading of a particular WORK, VERSION, or ARTEFACT (eg, a review or essay). This is not necessarily a single reading, but can be the duration of a PERSON&#39;s engagement with the work over time. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Situation</IRI>
+        <Literal>A SITUATION provides a context for making time-dependent assertions. For example, the composition of a particular work might have begun in the closing months of World War One. Such assertions can be profitably employed to generate richly informed timelines.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2560,8 +2668,15 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Version_part</IRI>
+        <Literal>Any subsection of a Version.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Work</IRI>
-        <Literal>A concept that &#39;operates as a regulative idea that immediately dissolves, in reading, into the negative dialectic of document and text. Seen as a regulative idea, the &#8216;work&#8217; retains its function as a pragmatic agreement for organising our remembered experiences of reading documents that are closely related bibliographically.&#39; (Eggert 2009, 235) A WORK is realised in any VERSION that is embodied in an ARTEFACT.</Literal>
+        <Literal>An abstraction used as a regulating concept by which Versions and Artefacts are gathered as representatives. For example: The book that I hold in my hand contains a version of the work, Ulysses, to which James Joyce is attributed authorship. The book you hold in your hand contains a different version of the work, Ulysses, to which James Joyce is also attributed authorship. That is, an ARTEFACT can be said to embody a VERSION which is a realisation of a WORK.
+
+Note: an ARTEFACT can embody one or more versions, and those VERSIONS can realise one or more WORKS.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2612,6 +2727,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#employs</IRI>
         <Literal>Links to AGENTS to identify one as the employee of the other.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_adaptation</IRI>
+        <Literal>Denotes a relationship where a work in one form (eg fiction, drama, poetry) has been adapted into another form (eg film, drama, fiction).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
