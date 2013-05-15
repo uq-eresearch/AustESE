@@ -59,7 +59,10 @@
         <Class IRI="#Place"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Production"/>
+        <Class IRI="#Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publication_part"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Reception"/>
@@ -81,9 +84,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#creation_part"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#production_part"/>
     </Declaration>
     <Declaration>
         <Class IRI="#reception_part"/>
@@ -282,6 +282,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_serialisation_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_transposition"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#next"/>
@@ -819,8 +822,12 @@
         <Class IRI="#Agent"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Production"/>
+        <Class IRI="#Publication"/>
         <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Publication_part"/>
+        <Class IRI="#Publication"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Reception"/>
@@ -841,10 +848,6 @@
     <SubClassOf>
         <Class IRI="#creation_part"/>
         <Class IRI="#Creation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#production_part"/>
-        <Class IRI="#Production"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#reception_part"/>
@@ -1307,6 +1310,10 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#is_transposition"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#next"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -1730,6 +1737,14 @@
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_transposition"/>
+        <Class IRI="#Version_part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_transposition"/>
+        <Class IRI="#Work_part"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#participated_in"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
@@ -2084,6 +2099,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_serialisation_of"/>
         <Class IRI="#Work"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_transposition"/>
+        <Class IRI="#Version_part"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_transposition"/>
+        <Class IRI="#Work_part"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#participated_in"/>
@@ -2462,10 +2485,6 @@
         <Class IRI="#Person"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
-        <Class IRI="#Production"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="http://www.w3.org/2006/time#day"/>
         <Class IRI="http://www.w3.org/2006/time#DateTimeDescription"/>
     </DataPropertyDomain>
@@ -2648,8 +2667,8 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Production</IRI>
-        <Literal>A PRODUCTION EVENT leads to the creation of an ARTEFACT designed for publication (eg book, magazine, newspaper). A PRODUCTION EVENT is best seen as a project that has a duration with projected and unprojected outcomes. In book production this is similar to the relationship between the concepts of edition and impression. The PRODUCTION EVENT is the &quot;edition&quot; and the impressions are the material outcomes that are created at intervals. Like an edition, the PRODUCTION EVENT ends when the type is destroyed or distributed. In most cases, the impression and edition are inferred through an examination and description of one extant ARTEFACT. Another type of PRODUCTION EVENT is a &quot;serialisation&quot; in which a WORK is realised in  multiple instalments over a specified period of time.</Literal>
+        <IRI>#Publication</IRI>
+        <Literal>A PUBLICATION EVENT leads to the creation of an ARTEFACT designed for publication (eg book, magazine, newspaper). A PUBLICATION EVENT is best seen as a project that has a duration with projected and unprojected outcomes. In book production this is similar to the relationship between the concepts of edition and impression. The PUBLICATION EVENT is the &quot;edition&quot; and the impressions are the material outcomes that are created at intervals. Like an edition, the PUBLICATION EVENT ends when the type is destroyed or distributed. In most cases, the impression and edition are inferred through an examination and description of one extant ARTEFACT. Another type of PUBLICATION EVENT is a &quot;serialisation&quot; in which a WORK is realised in  multiple instalments over a specified period of time.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
