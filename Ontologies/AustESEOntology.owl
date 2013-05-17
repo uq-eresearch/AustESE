@@ -16,10 +16,10 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      ontologyIRI="http://www.semanticweb.org/ontologies/2012/10/ArtefactVersionWork.owl">
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -27,7 +27,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">
       An OWL Ontology of Time (OWL-Time).
     </Literal>
     </Annotation>
@@ -38,10 +38,13 @@
         <Class IRI="#Artefact"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Artefact_part"/>
+        <Class IRI="#ArtefactPart"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Creation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CreationPart"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Event"/>
@@ -62,10 +65,13 @@
         <Class IRI="#Publication"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Publication_part"/>
+        <Class IRI="#PublicationPart"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Reception"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceptionPart"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Situation"/>
@@ -74,22 +80,16 @@
         <Class IRI="#Version"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Version_part"/>
+        <Class IRI="#VersionPart"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Work"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Work_part"/>
+        <Class IRI="#WorkPart"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#creation_part"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#reception_part"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI=":Thing"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/2006/time#DateTimeDescription"/>
@@ -218,6 +218,9 @@
         <ObjectProperty IRI="#has_serialisation"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#has_sub_event"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_type"/>
     </Declaration>
     <Declaration>
@@ -249,6 +252,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_contained_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_derived_from"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_destroyed_by"/>
@@ -323,7 +329,7 @@
         <ObjectProperty IRI="#writes"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/2006/time#after"/>
@@ -447,6 +453,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#has_medium"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_name"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#has_title"/>
@@ -798,12 +807,16 @@
         </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#Artefact_part"/>
+        <Class IRI="#ArtefactPart"/>
         <Class IRI="#Artefact"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Creation"/>
         <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CreationPart"/>
+        <Class IRI="#Creation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Event"/>
@@ -826,7 +839,7 @@
         <Class IRI="#Event"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Publication_part"/>
+        <Class IRI="#PublicationPart"/>
         <Class IRI="#Publication"/>
     </SubClassOf>
     <SubClassOf>
@@ -834,24 +847,20 @@
         <Class IRI="#Event"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ReceptionPart"/>
+        <Class IRI="#Reception"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Situation"/>
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Version_part"/>
+        <Class IRI="#VersionPart"/>
         <Class IRI="#Version"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Work_part"/>
+        <Class IRI="#WorkPart"/>
         <Class IRI="#Work"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#creation_part"/>
-        <Class IRI="#Creation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#reception_part"/>
-        <Class IRI="#Reception"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#DateTimeDescription"/>
@@ -1103,263 +1112,263 @@
     </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#acquires"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#annotates"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#appears_in"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#at_time"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#binds"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#contains"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#created_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#creates"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#destroys"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#edits"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#embodies"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#employs"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_adaptation"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_annotation"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_author"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_binder"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_digital_surrogate"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_editor"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_image"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_literary_agent"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_member"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_part"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_participant"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_presence"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_printer"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_publisher"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_reader"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_realisation"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_review"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_serialisation"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_type"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_writer"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#in_place"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#includes"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#influences"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#involves"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_acquired_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_adaptation_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_associated_with"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_author_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_contained_in"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_destroyed_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_embodiment_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_employed_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_image_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_influenced_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_member_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_part_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_promoted_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_realisation_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_represented_by"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_serialisation_of"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#is_transposition"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty IRI="#is_derived_from"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#next"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#participated_in"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#previous"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#prints"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#promotes"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#publishes"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#reads"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#realises"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#represents"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#reviews"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#serialises"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#writes"/>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="http://www.w3.org/2006/time#intervalBefore"/>
@@ -1645,6 +1654,10 @@
         <Class IRI="#Work"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sub_event"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_writer"/>
         <Class IRI="#Artefact"/>
     </ObjectPropertyDomain>
@@ -1738,11 +1751,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_transposition"/>
-        <Class IRI="#Version_part"/>
+        <Class IRI="#VersionPart"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_transposition"/>
-        <Class IRI="#Work_part"/>
+        <Class IRI="#WorkPart"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#participated_in"/>
@@ -1785,11 +1798,11 @@
         <Class IRI="#Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <Class IRI="#Version"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1997,6 +2010,10 @@
         <Class IRI="#Artefact"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_sub_event"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_writer"/>
         <Class IRI="#Person"/>
     </ObjectPropertyRange>
@@ -2102,11 +2119,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_transposition"/>
-        <Class IRI="#Version_part"/>
+        <Class IRI="#VersionPart"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_transposition"/>
-        <Class IRI="#Work_part"/>
+        <Class IRI="#WorkPart"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#participated_in"/>
@@ -2157,7 +2174,7 @@
         <Class IRI="#Artefact"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <Class IRI="#Work"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2230,151 +2247,151 @@
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#binding_type"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#extent"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#foliation"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#frequency"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_abstract"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_alternative_title"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_audience"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_binding"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_biography"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_chainlines"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_colour"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_description"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_dimensions"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_epigraph"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_format"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_location"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_medium"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_title"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_typeface"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#has_watermark"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_codex"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_composition"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_edition"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_galley_proofs"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_magazine"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_manuscript"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_newspaper"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_periodical_issue"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_promoter"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_typescript"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#is_writer"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#pagination"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#paper_type"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#participation_type"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#provenance"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#size"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#typography"/>
-        <DataProperty abbreviatedIRI=":topDataProperty"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#has_alternative_title"/>
@@ -2623,296 +2640,311 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Agent</IRI>
-        <Literal>A participant in a particular event. Agents may be a  Person, Organisation or Group.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A participant in a particular event. Agents may be a  Person, Organisation or Group.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Artefact</IRI>
-        <Literal>A concept that stands for a material thing such as a manuscript, book, newspaper, magazine etc. Beyond standing for unique artefacts such as manuscripts, it is synonymous with a FRBR Item, thereby standing for the one physical copy of a particular edition or periodical that is employed for the purposes of bibliographical description.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A concept that stands for a material thing such as a manuscript, book, newspaper, magazine etc. Beyond standing for unique artefacts such as manuscripts, it is synonymous with a FRBR Item, thereby standing for the one physical copy of a particular edition or periodical that is employed for the purposes of bibliographical description.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Artefact_part</IRI>
-        <Literal>Any subsection of an artefact, such as a sheet, page, gathering, or any designated area of these.</Literal>
+        <IRI>#ArtefactPart</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any subsection of an artefact, such as a sheet, page, gathering, or any designated area of these.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Creation</IRI>
-        <Literal>A CREATION EVENT leads to the creation of a pre-publication artefact such as notes, manuscript, or typescript. Such events have a duration that continues until an artefact is complete or set aside.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A CREATION EVENT leads to the creation of a pre-publication artefact such as notes, manuscript, or typescript. Such events have a duration that continues until an artefact is complete or set aside.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Event</IRI>
-        <Literal>An EVENT marks a moment in time or a duration of time in which one or more AGENTS participate in an endeavour that results in the production of an ARTEFACT. EVENTS have the sub-classe Creation, Production, and Reception to better capture the sometimes multi-faceted acts of composition, publication, and reading. </Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An EVENT marks a moment in time or a duration of time in which one or more AGENTS participate in an endeavour that results in the production of an ARTEFACT. EVENTS have the sub-classe Creation, Production, and Reception to better capture the sometimes multi-faceted acts of composition, publication, and reading. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Group</IRI>
-        <Literal>A collection of AGENTS that forms a club, society association etc.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A collection of AGENTS that forms a club, society association etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Organisation</IRI>
-        <Literal>A commercial or non-commercial enterprise involved in the production of literary works (eg publisher, printer, literary agency).</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A commercial or non-commercial enterprise involved in the production of literary works (eg publisher, printer, literary agency).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Person</IRI>
-        <Literal>A human being.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A human being.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Place</IRI>
-        <Literal>A particular locality.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A particular locality.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Publication</IRI>
-        <Literal>A PUBLICATION EVENT leads to the creation of an ARTEFACT designed for publication (eg book, magazine, newspaper). A PUBLICATION EVENT is best seen as a project that has a duration with projected and unprojected outcomes. In book production this is similar to the relationship between the concepts of edition and impression. The PUBLICATION EVENT is the &quot;edition&quot; and the impressions are the material outcomes that are created at intervals. Like an edition, the PUBLICATION EVENT ends when the type is destroyed or distributed. In most cases, the impression and edition are inferred through an examination and description of one extant ARTEFACT. Another type of PUBLICATION EVENT is a &quot;serialisation&quot; in which a WORK is realised in  multiple instalments over a specified period of time.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A PUBLICATION EVENT leads to the creation of an ARTEFACT designed for publication (eg book, magazine, newspaper). A PUBLICATION EVENT is best seen as a project that has a duration with projected and unprojected outcomes. In book production this is similar to the relationship between the concepts of edition and impression. The PUBLICATION EVENT is the &quot;edition&quot; and the impressions are the material outcomes that are created at intervals. Like an edition, the PUBLICATION EVENT ends when the type is destroyed or distributed. In most cases, the impression and edition are inferred through an examination and description of one extant ARTEFACT. Another type of PUBLICATION EVENT is a &quot;serialisation&quot; in which a WORK is realised in  multiple instalments over a specified period of time.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Reception</IRI>
-        <Literal>A RECEPTION EVENT leads to the creation of a written response to a reading of a particular WORK, VERSION, or ARTEFACT (eg, a review or essay). This is not necessarily a single reading, but can be the duration of a PERSON&#39;s engagement with the work over time. </Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A RECEPTION EVENT leads to the creation of a written response to a reading of a particular WORK, VERSION, or ARTEFACT (eg, a review or essay). This is not necessarily a single reading, but can be the duration of a PERSON&apos;s engagement with the work over time. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Situation</IRI>
-        <Literal>A SITUATION provides a context for making time-dependent assertions. For example, the composition of a particular work might have begun in the closing months of World War One. Such assertions can be profitably employed to generate richly informed timelines.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A SITUATION provides a context for making time-dependent assertions. For example, the composition of a particular work might have begun in the closing months of World War One. Such assertions can be profitably employed to generate richly informed timelines.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Version</IRI>
-        <Literal>A concept that can be used to assert that one or more ARTEFACTS contain a particular string of characters that are the same or similar to a specified degree. </Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A concept that can be used to assert that one or more ARTEFACTS contain a particular string of characters that are the same or similar to a specified degree. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Version_part</IRI>
-        <Literal>Any subsection of a Version.</Literal>
+        <IRI>#VersionPart</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any subsection of a Version.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Work</IRI>
-        <Literal>An abstraction used as a regulating concept by which Versions and Artefacts are gathered as representatives. For example: The book that I hold in my hand contains a version of the work, Ulysses, to which James Joyce is attributed authorship. The book you hold in your hand contains a different version of the work, Ulysses, to which James Joyce is also attributed authorship. That is, an ARTEFACT can be said to embody a VERSION which is a realisation of a WORK.
+        <Literal datatypeIRI="&rdf;PlainLiteral">An abstraction used as a regulating concept by which Versions and Artefacts are gathered as representatives. For example: The book that I hold in my hand contains a version of the work, Ulysses, to which James Joyce is attributed authorship. The book you hold in your hand contains a different version of the work, Ulysses, to which James Joyce is also attributed authorship. That is, an ARTEFACT can be said to embody a VERSION which is a realisation of a WORK.
 
 Note: an ARTEFACT can embody one or more versions, and those VERSIONS can realise one or more WORKS.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#acquires</IRI>
-        <Literal>Used to record the provenance of an ARTEFACT, particularly in cases where manuscripts are bought and sold by private and institutional collectors.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Used to record the provenance of an ARTEFACT, particularly in cases where manuscripts are bought and sold by private and institutional collectors.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#appears_in</IRI>
-        <Literal>Associates a WORK with another WORK when one is published as a part of the other, as in a collection of poetry or short stories.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates a WORK with another WORK when one is published as a part of the other, as in a collection of poetry or short stories.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#at_time</IRI>
-        <Literal>Associates a time with an entity.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates a time with an entity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#binds</IRI>
-        <Literal>Identifies the AGENT responsible for the binding of an ARTEFACT (ie book or other codex).</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Identifies the AGENT responsible for the binding of an ARTEFACT (ie book or other codex).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#contains</IRI>
-        <Literal>An assertion linking a VERSION to an ARTEFACT when the artefact is not extant but is known to have existed (eg lost manuscript, discarded galley proofs etc.) Where artefacts are extant, they are linked to a version via the digital object that acts as a surrogate for the material</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An assertion linking a VERSION to an ARTEFACT when the artefact is not extant but is known to have existed (eg lost manuscript, discarded galley proofs etc.) Where artefacts are extant, they are linked to a version via the digital object that acts as a surrogate for the material</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#creates</IRI>
-        <Literal>Links an EVENT or an ACTION to an ARTEFACT to show which INDIVIDUALS contributed to an ARTEFACT being brought into existence.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Links an EVENT or an ACTION to an ARTEFACT to show which INDIVIDUALS contributed to an ARTEFACT being brought into existence.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#destroys</IRI>
-        <Literal>Links an AGENT to and ARTEFACT in situations where that ARTEFACT ceased to exist, such as the burning of a manuscript.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Links an AGENT to and ARTEFACT in situations where that ARTEFACT ceased to exist, such as the burning of a manuscript.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#edits</IRI>
-        <Literal>Links an AGENT to an ARTEFACT as an EDITOR, attributing responsibility for variation in a subsequent ARTEFACT.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Links an AGENT to an ARTEFACT as an EDITOR, attributing responsibility for variation in a subsequent ARTEFACT.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#embodies</IRI>
-        <Literal>A VERSION is embodied in the DIGITAL OBJECT that acts as a surrogate for an ARTEFACT.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A VERSION is embodied in the DIGITAL OBJECT that acts as a surrogate for an ARTEFACT.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#employs</IRI>
-        <Literal>Links to AGENTS to identify one as the employee of the other.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Links to AGENTS to identify one as the employee of the other.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_adaptation</IRI>
-        <Literal>Denotes a relationship where a work in one form (eg fiction, drama, poetry) has been adapted into another form (eg film, drama, fiction).</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Denotes a relationship where a work in one form (eg fiction, drama, poetry) has been adapted into another form (eg film, drama, fiction).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_author</IRI>
-        <Literal>Distinct from WRITER which denotes an active role in the CREATION of an ARTEFACT, AUTHOR is a more general term of attribution at the WORK level. </Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Distinct from WRITER which denotes an active role in the CREATION of an ARTEFACT, AUTHOR is a more general term of attribution at the WORK level. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_binder</IRI>
-        <Literal>Used to identify the BINDER of a particular codex.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Used to identify the BINDER of a particular codex.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_digital_surrogate</IRI>
-        <Literal>Associates and ARTEFACT with a DIGITAL OBJECT such as an image or transcription.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates and ARTEFACT with a DIGITAL OBJECT such as an image or transcription.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_editor</IRI>
-        <Literal>Associates and ARTEFACT with and AGENT who performs the ACTION, &quot;editing&quot;.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates and ARTEFACT with and AGENT who performs the ACTION, &quot;editing&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_image</IRI>
-        <Literal>Associates an ARTEFACT with a DIGITAL OBJECT that is an image.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an ARTEFACT with a DIGITAL OBJECT that is an image.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_literary_agent</IRI>
-        <Literal>Associates and ARTEFACT with an AGENT who performs the ACTION, &quot;represents&quot;.
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates and ARTEFACT with an AGENT who performs the ACTION, &quot;represents&quot;.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_member</IRI>
-        <Literal>Associates an AGENT with an ORGANISATION</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an AGENT with an ORGANISATION</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_name</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">has_name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_participant</IRI>
-        <Literal>Associates an EVENT with an AGENT</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an EVENT with an AGENT</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_presence</IRI>
-        <Literal>Associates an AGENT as being present at an EVENT.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an AGENT as being present at an EVENT.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_printer</IRI>
-        <Literal>Associates an ARTEFACT with an AGENT who performs the ACTION of &quot;printing&quot;.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an ARTEFACT with an AGENT who performs the ACTION of &quot;printing&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_publisher</IRI>
-        <Literal>Associates and ARTEFACT with an AGENT who performs the ACTION, &quot;publishing&quot;.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates and ARTEFACT with an AGENT who performs the ACTION, &quot;publishing&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_reader</IRI>
-        <Literal>Asociates an ARTEFACT with an AGENT who performs the ACTION, &quot;reading&quot;.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Asociates an ARTEFACT with an AGENT who performs the ACTION, &quot;reading&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_realisation</IRI>
-        <Literal>A WORK has a realisation in a VERSION.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A WORK has a realisation in a VERSION.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_serialisation</IRI>
-        <Literal>Associates a WORK with VERSION that embodies the ARTEFACT as a serialisation. </Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates a WORK with VERSION that embodies the ARTEFACT as a serialisation. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_sub_event</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">has_sub_event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_type</IRI>
-        <Literal>Associates entities with a property &quot;type&quot;.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates entities with a property &quot;type&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#has_writer</IRI>
-        <Literal>Associates an ARTEFACT with and AGENT who performs the ACTION, &quot;writing&quot;.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an ARTEFACT with and AGENT who performs the ACTION, &quot;writing&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#in_place</IRI>
-        <Literal>Associates a location with an entity.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates a location with an entity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#includes</IRI>
-        <Literal>Associates two WORKS when one is included as a part of the other, such as in the case of collections of poetry or short stories.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates two WORKS when one is included as a part of the other, such as in the case of collections of poetry or short stories.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#involves</IRI>
-        <Literal>Links an ARTEFACT to an EVENT to specify that the artefact was used in the creation of a new artefact (eg when a manuscript is used as setting copy by a printer)</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Links an ARTEFACT to an EVENT to specify that the artefact was used in the creation of a new artefact (eg when a manuscript is used as setting copy by a printer)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_acquired_by</IRI>
-        <Literal>Associates an ARTEFACT with an AGENT who performs the ACTION, &quot;acquiring&quot;. To be used in describing the provenance of a particular artefact.
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an ARTEFACT with an AGENT who performs the ACTION, &quot;acquiring&quot;. To be used in describing the provenance of a particular artefact.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_associated_with</IRI>
-        <Literal>Relates two AGENTS with an undefined association to define acquaintances.
+        <Literal datatypeIRI="&rdf;PlainLiteral">Relates two AGENTS with an undefined association to define acquaintances.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_author_of</IRI>
-        <Literal>Attributes authorship at the WORK level and is distinct from WRITER which describes a more active participation in the creation of an ARTEFACT.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Attributes authorship at the WORK level and is distinct from WRITER which describes a more active participation in the creation of an ARTEFACT.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_contained_in</IRI>
-        <Literal>An assertion linking a VERSION to an ARTEFACT when the artefact is not extant but is known to have existed (eg lost manuscript, discarded galley proofs etc.) Where artefacts are extant, they are linked to a version via the digital object that acts as a surrogate for the material</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An assertion linking a VERSION to an ARTEFACT when the artefact is not extant but is known to have existed (eg lost manuscript, discarded galley proofs etc.) Where artefacts are extant, they are linked to a version via the digital object that acts as a surrogate for the material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#is_derived_from</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">is_derived_from</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_embodiment_of</IRI>
-        <Literal>Associates a DIGITAL OBJECT as the embodiment of a particulr VERSION</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates a DIGITAL OBJECT as the embodiment of a particulr VERSION</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_employed_by</IRI>
-        <Literal>Associates an AGENT with an ORGANISATION that acts as an employer.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an AGENT with an ORGANISATION that acts as an employer.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_member_of</IRI>
-        <Literal>Associates and AGENT with an ORGANISATION.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates and AGENT with an ORGANISATION.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_part_of</IRI>
-        <Literal>Associates an ARTEFACT as being part of a larger collection.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates an ARTEFACT as being part of a larger collection.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_realisation_of</IRI>
-        <Literal>A VERSION is a realisation of a WORK.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A VERSION is a realisation of a WORK.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#is_serialisation_of</IRI>
-        <Literal>Associates with a WORK a particular VERSION which is embodied in an ARTEFACT as a serialisation.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associates with a WORK a particular VERSION which is embodied in an ARTEFACT as a serialisation.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#realises</IRI>
-        <Literal>In an electronic edition, a WORK is realised by a VERSION.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">In an electronic edition, a WORK is realised by a VERSION.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#represents</IRI>
-        <Literal>Identifies a PERSON who represents another PERSON such as the the relationship between a WRITER and a LITERARY AGENT.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Identifies a PERSON who represents another PERSON such as the the relationship between a WRITER and a LITERARY AGENT.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
