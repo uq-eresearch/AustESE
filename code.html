@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>AustESE: Australian Electronic Scholarly Editing - Publications</title>
+    <title>AustESE: Australian Electronic Scholarly Editing - Source Code</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -37,10 +37,9 @@
             <ul class="nav">
               <li><a href="index.html">About</a></li>
               <li><a href="services.html">Services</a></li>
+              <li><a href="code.html">Source Code</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
               <li><a href="people.html">People</a></li>
-              <li><a href="events.html">Events</a></li>
-              <li class="active"><a href="publications.html">Publications</a></li>
-              <li><a href="related.html">Related</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
             <p class="pull-right" style="margin-bottom:0;margin-top:10px;"><a href="http://nectar.org.au/"><img src="img/nectarlogo-inverse.png" alt="NeCTAR"/></a></p>
@@ -51,33 +50,54 @@
       </div>
     </div>
     <div class="container">
-      <section id="publications">
+      <section id="code">
           <div class="page-header">
-              <h1>Publications &amp; Presentations</h1>
+              <h1>Source Code</h1>
           </div>
-		   <p>R. Osborne, A. Gerber, J. Hunter, <a href="http://www.dh2012.uni-hamburg.de/conference/programme/pre-conference-workshops/">
-		      <i>Ontology-based Annotation for Electronic Editions using the Open Annotation Collaboration (OAC) Data Model</i></a>,
-		      NeDiMaH Workshop on Ontology Based Annotation, Digital Humanities 2012, Hamburg, Germany, July 16-20, 2012.</p>
-		   <p>Anna Gerber, <a href="http://www.openannotation.org/documents/ChicagoOAC_ReviewMeeting.pdf">
-		      <i>Annotation Supporting Collaborative Development of Scholarly Editions</i></a>,
-			  Open Annotation Collaboration Project Review Meeting, Chicago, July 26-27, 2012.</p>
-		   <p>Roger Osborne, <a href="http://www.notwithoutmustard.net/book-logic2012/"><i>Making the Archive Talk: An Ontology-based
-		      Electronic Edition of Joseph Furphy's Such is Life</i></a>,
-			  Book Logic Symposium, Perth, June 29, 2012.</p>
-           <p>Anna Gerber, Roger Osborne, <a href="../../presentations/Gerber-DHA2012-slides-web.pdf"><i>Transforming Communication in Textual Scholarship: Open Annotation for Electronic Editions</i></a>,
-              Digital Humanities Australasia (DHA) 2012, Canberra, 28 -30 March 2012.</p>
-      </section>
-      <section id="documents">
-          <div class="page-header">
-              <h1>Project Documentation and Upates</h1>
-          </div>
-          <p><a href="https://github.com/uq-eresearch/AustESE/wiki">AustESE wiki</a> on GitHub</p>
-          <p><a href="http://austese.wordpress.com/">AustESE blog</a></p>
-          <p>
-          <a href="https://twitter.com/AustESE" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @AustESE</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </p>
-      </section>
+          
+	  <h2>Standalone tools and services</h2>
+	  <h3 id="lorestore">lorestore</h3>
+	  <p><a href="https://github.com/uq-eresearch/lorestore/">https://github.com/uq-eresearch/lorestore/</a><br/>
+	  License: GPL 3.0<br/>
+	  lorestore provides services for storing, searching and validating Open Annotation (OA) annotations and ORE Resource Maps.</p>
+
+	  <h3 id="annotator">Annotator</h3>
+	  <p><a href="https://github.com/uq-eresearch/annotator/">https://github.com/uq-eresearch/annotator/</a><br/>
+	  License: GPL 3.0 or MIT<br/>
+	  Annotator is a web annotation system developed by OKFN. We have extended Annotator via plugins to support the Open Annotation model using lorestore, image annotation, custom motivations and replies.</p>
+
+	  <h3 id="calliope">Calliope</h3>
+	  <p><a href="https://github.com/AustESE-Infrastructure/calliope">https://github.com/AustESE-Infrastructure/calliope</a><br/>
+	  License: GPL 2.0<br/>
+	  Calliope provides Multi-Version-Document services.</p>
+	  <hr/>
+	  <h2>Services built on Drupal</h2>
+
+	  <h3 id="annotations"><tt>austese_annotations</tt> Drupal Module</h3>
+	  <p><a href="https://github.com/uq-eresearch/austese_annotations/">https://github.com/uq-eresearch/austese_annotations/</a><br/>
+	  License: GPL 3.0<br/>
+	  This module provides a search interface, including keyword and advanced searches over the Annotations stored in <a href="#lorestore">lorestore</a> and integrates the <a href="#annotator">Annotator</a> tool and custom plugins into the Workbench.</p>
+
+	  <h3 id="repository"><tt>austese_repository</tt> Drupal Module</h3>
+	  <p><a href="https://github.com/uq-eresearch/austese_repository/">https://github.com/uq-eresearch/austese_repository/</a><br/>
+	  License: GPL 3.0<br/>
+	  This module provides search, display and editing UI and lightweight REST API wrapper around <a href="http://www.mongodb.org/">MongoDB</a> for storing metadata and resources within the Content Repository. It also provides import, export, editing and organisation tools for images, transcriptions and other digital resources.</p>
+
+	  <h3 id="alignment"><tt>austese_alignment</tt> Drupal Module</h3>
+	  <p><a href="https://github.com/uq-eresearch/austese_alignment/">https://github.com/uq-eresearch/austese_alignment/</a><br/>	  
+	  License: GPL 3.0<br/>
+	  This module provides a custom UI for attaching OA annotations stored in <a href="#lorestore">lorestore</a> to record alignment information between images and transcriptions.</p>
+
+	  <h3 id="collation"><tt>austese_collation</tt> Drupal Module</h3>
+	  <p><a href="https://github.com/uq-eresearch/austese_collation/">https://github.com/uq-eresearch/austese_collation/</a><br/>
+	  License: GPL 3.0<br/>
+	  This module provides collation tools for identifying and visualising variants using the <a href="#calliope">Calliope</a> service.</p>
+
+	  <h3 id="theme">AustESE Drupal theme</h3>
+	  <p><a href="https://github.com/uq-eresearch/austese_theme/">https://github.com/uq-eresearch/austese_theme/</a><br/>
+	  License: GPL 2.0 or later<br/>
+	  Based on <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, this is the default theme developed for the AustESE Workbench.</p>
+	  </section>
       <footer class="footer">
           <div class="row">
               <p style="padding-right:17px" class="pull-left">

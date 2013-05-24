@@ -37,10 +37,9 @@
             <ul class="nav">
               <li><a href="index.html">About</a></li>
               <li class="active"><a href="services.html">Services</a></li>
+              <li><a href="code.html">Source Code</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
               <li><a href="people.html">People</a></li>
-              <li><a href="events.html">Events</a></li>
-              <li><a href="publications.html">Publications</a></li>
-              <li><a href="related.html">Related</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
             <p class="pull-right" style="margin-bottom:0;margin-top:10px;"><a href="http://nectar.org.au/"><img src="img/nectarlogo-inverse.png" alt="NeCTAR"/></a></p>
@@ -55,34 +54,40 @@
           <div class="page-header">
               <h1>Services</h1>
           </div>
-          <img style="display: block;max-width: 100%;margin-left: auto;margin-right: auto;" src="img/architecture.png" alt="AustESE Architecture"/>
-          <hr>
+
+      <p>The AustESE Workbench integrates the following services:</p> 
           <div class="row">
               <div id="repository" class="span4">
                   <h2>Content Repository</h2>
-                  <p>A combination of a relational datastore and RDF triplestore, the content repository stores images, transcriptions (as Multi-Version-Documents), annotations &amp; edition metadata.</p>
+                  <p>A combination of a document datastore and RDF triplestore, the content repository stores images, transcriptions (as Multi-Version-Documents), annotations &amp; edition metadata.</p>
+		  <p>This service is implemented by the <a href="code.html#lorestore">lorestore</a> repository and the <a href="code.html#repository">austese_repository</a> Drupal module.</p>
               </div>
               <div id="markup" class="span4">
                   <h2>Text Import &amp; Mark-up</h2>
                   <p>Includes editing tools for adding markup and corrections as well as tools to import transcriptions and images from a variety of formats including TEI/XML.</p>
+		  <p>This service is implemented by the <a href="code.html#repository">austese_repository</a> Drupal module.</p>
               </div>
             <div id="alignment" class="span4">
                 <h2>Text &amp; Image Alignment</h2>
                 <p>Tools to support automatic or manual mapping and overlay of transcriptions and facsimile images.</p>
+		  <p>This service is implemented by the <a href="code.html#alignment">austese_alignment</a> Drupal module.</p>
             </div>
           </div>
           <div class="row">
             <div id="collation" class="span4">
                 <h2>Collation &amp; Textual Analysis</h2>
                 <p>Tools to assist editors to collate texts and to produce apparatus for scholarly editions. These tools will also provide visualisation of variants and the visualisation of relationships between texts.</p>
+		<p>This service is implemented by the <a href="code.html#collation">austese_collation</a> Drupal module and <a href="code.html#calliope">Calliope</a> service.</p>
             </div>
             <div id="annotation" class="span4">
                 <h2>Annotation &amp; Tagging</h2>
-                <p>Collaborative annotation tools that allow editors to attach or reply to scholarly commentary on variations or parts of images or transcriptions, display, search or migrate annotations.</p>
+                <p>Collaborative annotation tools that allow editors to attach or reply to scholarly commentary on variations or parts of images or transcriptions, display, search and migrate annotations.</p
+		  <p>This service is implemented by the <a href="code.html#annotator">Annotator</a> tool and the <a href="code.html#annotations">austese_annotations</a> Drupal module.</p>
             </div>
             <div id="publishing" class="span4">
                 <h2>Electronic Publishing</h2>
                 <p>Tools for versioning, locking &amp; publishing electronic scholarly editions as well as to export to formats such as TEI, MS Word &amp; ePub.</p>
+		  <p>This service is implemented by the <a href="code.html#repository">austese_repository</a> Drupal module.</p>
             </div>
           </div>
           <div class="row">
@@ -92,13 +97,18 @@
             </div>
             <div id="webportal" class="span4">
                 <h2>Web Portal</h2>
-                <p>Integrates the workbench modules and provides a web-based user interface.</p>
+                <p>Integrates the workbench modules and provides a web-based user interface to support the scholarly editing workflow.</p>
+		<p>The Workbench Web interface has been developed using <a href="http://drupal.org/">Drupal 7</a>, with a <a href="code.html#theme">custom theme</a>.</p>
             </div>
             <div id="auth" class="span4">
                 <h2>Access &amp; Authentication</h2>
-                <p>AustESE will use the Australian Access Federation (AAF) services to implement authentication and access control.</p>
+                <p>AustESE supports OpenID and will eventually use Australian Access Federation (AAF) to implement authentication and access control.</p>
+		<p>This service is implemented using the <a href="http://drupal.org/project/openid">Drupal OpenID module</a> with support for the annotation service provided by <a href="code.html#lorestore">lorestore</a> and the <a href="code.html#repository">austese_repository</a> module.</p>
             </div>
           </div>
+          <hr>
+          <img style="display: block;max-width: 100%;margin-left: auto;margin-right: auto;" src="img/architecture.png" alt="AustESE Architecture"/>
+
       </section>
       <footer class="footer">
           <div class="row">
