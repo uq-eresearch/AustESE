@@ -1,0 +1,23 @@
+{
+  "type": "suite",
+  "seleniumVersion": "2",
+  "formatVersion": 1,
+  "scripts": [
+    {
+      "where": "local",
+      "path": "repository-create-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "repository-edit-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "repository-delete-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "repository-create-agent-with-formatting.js"
+    }
+  ]
+}
