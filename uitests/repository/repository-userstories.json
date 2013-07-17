@@ -1,0 +1,35 @@
+{
+  "type": "suite",
+  "seleniumVersion": "2",
+  "formatVersion": 1,
+  "scripts": [
+    {
+      "where": "local",
+      "path": "create-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "edit-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "create-version-relate.js"
+    },
+    {
+      "where": "local",
+      "path": "visualize-relationships.js"
+    },
+    {
+      "where": "local",
+      "path": "delete-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "delete-version.js"
+    },
+    {
+      "where": "local",
+      "path": "create-agent-with-formatting.js"
+    }
+  ]
+}

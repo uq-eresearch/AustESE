@@ -22,6 +22,10 @@
       }
     },
     {
+      "type": "waitForTextPresent",
+      "text": "Username"
+    },
+    {
       "type": "setElementText",
       "locator": {
         "type": "id",
@@ -72,20 +76,33 @@
       "text": "Person"
     },
     {
-      "type": "setElementText",
+      "type": "waitForElementPresent",
       "locator": {
-        "type": "id",
-        "value": "biography"
-      },
-      "text": "A biography"
+        "type": "xpath",
+        "value": "//ul[@class='wysihtml5-toolbar']//a[.='Bold']"
+      }
+    },
+    {
+      "type": "setElementSelected",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@class='invisi-well']/fieldset/div[3]/div/iframe"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Bold"
+      }
     },
     {
       "type": "setElementText",
       "locator": {
-        "type": "id",
-        "value": "biography"
+        "type": "css selector",
+        "value": "iframe.wysihtml5-sandbox"
       },
-      "text": "A biography"
+      "text": "Demo agent biography"
     },
     {
       "type": "clickElement",
@@ -102,8 +119,8 @@
       }
     },
     {
-      "type": "verifyTextPresent",
-      "text": "A, PersonA biographyEDIT"
+      "type": "waitForTextPresent",
+      "text": "A, Person"
     }
   ]
 }
