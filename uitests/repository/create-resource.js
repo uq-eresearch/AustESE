@@ -46,76 +46,48 @@
     },
     {
       "type": "get",
-      "url": "http://localhost/repository/artefacts"
+      "url": "http://localhost/repository/resources"
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "No resources selected"
     },
     {
       "type": "clickElement",
       "locator": {
         "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact']//a[.='EDIT']"
+        "value": "//button[.='New']"
       }
     },
     {
       "type": "setElementText",
       "locator": {
-        "type": "id",
-        "value": "source"
+        "type": "name",
+        "value": "filename"
       },
-      "text": "Demo artefact!"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "id",
-        "value": "save-btn"
-      }
-    },
-    {
-      "type": "waitForTextPresent",
-      "text": "Successfully saved artefact"
+      "text": "demotranscription"
     },
     {
       "type": "clickElement",
       "locator": {
         "type": "xpath",
-        "value": "//button[.='x']"
+        "value": "//button[.='OK']"
       }
     },
     {
       "type": "waitForTextPresent",
-      "negated": true,
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "setElementText",
-      "locator": {
-        "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact"
+      "text": "demotranscri..."
     },
     {
       "type": "clickElement",
       "locator": {
-        "type": "id",
-        "value": "save-btn"
-      }
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "get",
-      "url": "http://localhost/repository/artefacts"
-    },
-    {
-      "type": "assertElementPresent",
-      "negated": true,
-      "locator": {
         "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact'][2]"
+        "value": "//span[.='demotranscri...']"
       }
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "0 bytes"
     }
   ]
 }

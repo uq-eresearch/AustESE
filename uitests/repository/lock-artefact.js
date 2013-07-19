@@ -56,12 +56,18 @@
       }
     },
     {
-      "type": "setElementText",
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//label[normalize-space(.)='Locked']"
+      }
+    },
+    {
+      "type": "setElementSelected",
       "locator": {
         "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact!"
+        "value": "locked"
+      }
     },
     {
       "type": "clickElement",
@@ -71,51 +77,13 @@
       }
     },
     {
-      "type": "waitForTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "xpath",
-        "value": "//button[.='x']"
-      }
-    },
-    {
-      "type": "waitForTextPresent",
-      "negated": true,
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "setElementText",
+      "type": "verifyElementAttribute",
       "locator": {
         "type": "id",
         "value": "source"
       },
-      "text": "Demo artefact"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "id",
-        "value": "save-btn"
-      }
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "get",
-      "url": "http://localhost/repository/artefacts"
-    },
-    {
-      "type": "assertElementPresent",
-      "negated": true,
-      "locator": {
-        "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact'][2]"
-      }
+      "attributeName": "readonly",
+      "value": "true"
     }
   ]
 }

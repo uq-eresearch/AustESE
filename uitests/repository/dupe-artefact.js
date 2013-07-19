@@ -56,62 +56,21 @@
       }
     },
     {
-      "type": "setElementText",
+      "type": "clickElement",
       "locator": {
         "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact!"
+        "value": "dupe-btn"
+      }
     },
     {
       "type": "clickElement",
       "locator": {
-        "type": "id",
-        "value": "save-btn"
+        "type": "link text",
+        "value": "Artefacts"
       }
     },
     {
-      "type": "waitForTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "xpath",
-        "value": "//button[.='x']"
-      }
-    },
-    {
-      "type": "waitForTextPresent",
-      "negated": true,
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "setElementText",
-      "locator": {
-        "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "id",
-        "value": "save-btn"
-      }
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "get",
-      "url": "http://localhost/repository/artefacts"
-    },
-    {
-      "type": "assertElementPresent",
-      "negated": true,
+      "type": "verifyElementPresent",
       "locator": {
         "type": "xpath",
         "value": "//div[@class='obj'][h4/a='Demo artefact'][2]"

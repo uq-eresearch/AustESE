@@ -46,76 +46,33 @@
     },
     {
       "type": "get",
-      "url": "http://localhost/repository/artefacts"
+      "url": "http://localhost/repository/resources/"
     },
     {
       "type": "clickElement",
       "locator": {
         "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact']//a[.='EDIT']"
+        "value": "//span[.='demotranscri...']"
       }
-    },
-    {
-      "type": "setElementText",
-      "locator": {
-        "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact!"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "id",
-        "value": "save-btn"
-      }
-    },
-    {
-      "type": "waitForTextPresent",
-      "text": "Successfully saved artefact"
     },
     {
       "type": "clickElement",
       "locator": {
         "type": "xpath",
-        "value": "//button[.='x']"
+        "value": "//button[.='Delete']"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//button[.='Yes']"
       }
     },
     {
       "type": "waitForTextPresent",
       "negated": true,
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "setElementText",
-      "locator": {
-        "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact"
-    },
-    {
-      "type": "clickElement",
-      "locator": {
-        "type": "id",
-        "value": "save-btn"
-      }
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "get",
-      "url": "http://localhost/repository/artefacts"
-    },
-    {
-      "type": "assertElementPresent",
-      "negated": true,
-      "locator": {
-        "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact'][2]"
-      }
+      "text": "demotranscri"
     }
   ]
 }

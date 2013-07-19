@@ -30,6 +30,26 @@
     {
       "where": "local",
       "path": "create-agent-with-formatting.js"
+    },
+    {
+      "where": "local",
+      "path": "create-resource.js"
+    },
+    {
+      "where": "local",
+      "path": "edit-resource.js"
+    },
+    {
+      "where": "local",
+      "path": "lock-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "dupe-artefact.js"
+    },
+    {
+      "where": "local",
+      "path": "delete-resouce.js"
     }
   ]
 }

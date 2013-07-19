@@ -46,76 +46,77 @@
     },
     {
       "type": "get",
-      "url": "http://localhost/repository/artefacts"
+      "url": "http://localhost/repository/resources"
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "No resources selected"
     },
     {
       "type": "clickElement",
       "locator": {
         "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact']//a[.='EDIT']"
+        "value": "//span[.='demotranscri...']"
       }
     },
     {
-      "type": "setElementText",
+      "type": "waitForElementPresent",
       "locator": {
-        "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact!"
+        "type": "css selector",
+        "value": ".x-item-selected"
+      }
     },
     {
       "type": "clickElement",
       "locator": {
-        "type": "id",
-        "value": "save-btn"
+        "type": "xpath",
+        "value": "//em[.='Send to']"
+      }
+    },
+    {
+      "type": "waitForElementPresent",
+      "locator": {
+        "type": "xpath",
+        "value": "//span[.='Transcription editor']"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//a[span='Transcription editor']"
       }
     },
     {
       "type": "waitForTextPresent",
-      "text": "Successfully saved artefact"
+      "text": "Save New Version"
+    },
+    {
+      "type": "storeEval",
+      "script": "window.editor.cm.setValue(\"Demo transcription content\")",
+      "variable": "setcontent"
     },
     {
       "type": "clickElement",
       "locator": {
-        "type": "xpath",
-        "value": "//button[.='x']"
+        "type": "id",
+        "value": "savebtn"
       }
     },
     {
       "type": "waitForTextPresent",
-      "negated": true,
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "setElementText",
-      "locator": {
-        "type": "id",
-        "value": "source"
-      },
-      "text": "Demo artefact"
+      "text": "Resource has been updated"
     },
     {
       "type": "clickElement",
       "locator": {
-        "type": "id",
-        "value": "save-btn"
+        "type": "link text",
+        "value": "View Resource"
       }
     },
     {
-      "type": "verifyTextPresent",
-      "text": "Successfully saved artefact"
-    },
-    {
-      "type": "get",
-      "url": "http://localhost/repository/artefacts"
-    },
-    {
-      "type": "assertElementPresent",
-      "negated": true,
-      "locator": {
-        "type": "xpath",
-        "value": "//div[@class='obj'][h4/a='Demo artefact'][2]"
-      }
+      "type": "waitForTextPresent",
+      "text": "MD5 checksum"
     }
   ]
 }
