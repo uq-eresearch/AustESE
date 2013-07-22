@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/uq-eresearch/AustESE.png)](http://waffle.io/uq-eresearch/AustESE)  
 AustESE: Australian Electronic Scholarly Editing
 ================================================
 
