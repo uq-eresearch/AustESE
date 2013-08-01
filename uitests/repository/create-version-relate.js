@@ -51,8 +51,8 @@
     {
       "type": "clickElement",
       "locator": {
-        "type": "link text",
-        "value": "+ New version"
+        "type": "xpath",
+        "value": "//div[@id='newobject']//button[.=' New version']"
       }
     },
     {

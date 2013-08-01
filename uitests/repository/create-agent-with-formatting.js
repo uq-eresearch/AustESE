@@ -55,8 +55,8 @@
     {
       "type": "clickElement",
       "locator": {
-        "type": "link text",
-        "value": "+ New agent"
+        "type": "xpath",
+        "value": "//div[@id='newobject']//button[.=' New agent']"
       }
     },
     {
