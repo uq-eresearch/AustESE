@@ -62,7 +62,7 @@ public class HarpurTableToJson {
                 currentWork = new HashMap<String,String>();
                 currentWork.put("name",nextLine[0]);
                 workTitle = nextLine[1];
-                currentWork.put("workTitle", workTitle);
+                currentWork.put("workTitle", replaceStupidCharacters(workTitle));
                 workList.add(currentWork);
             }
             
@@ -74,12 +74,12 @@ public class HarpurTableToJson {
             currentVersions.add(versionId);
             v.put("name",nextLine[2]);
             v.put("date", nextLine[3]);
-            v.put("firstLine", nextLine[4]);
+            v.put("firstLine", replaceStupidCharacters(nextLine[4]));
             versTitle = nextLine[5];
             if (versTitle.startsWith("^")){
                 versTitle = workTitle;
             }
-            v.put("versionTitle", versTitle);
+            v.put("versionTitle", replaceStupidCharacters(versTitle));
             versionList.add(v);
             
             // Create an Artefact for each line
@@ -131,7 +131,9 @@ public class HarpurTableToJson {
        e.printStackTrace();
      }
   }
-
+  private static String replaceStupidCharacters(String input){
+      return input.replaceAll("Ò", "\"\"").replaceAll("Ó", "\"").replaceAll("Ñ", "-").replaceAll("Õ", "'").replaceAll("Ô", "'");
+  }
   public static String mapToString(HashMap<String,String> m) {
     StringBuffer revisionsBuffer= new StringBuffer();
     StringBuffer metadataBuffer = new StringBuffer();
