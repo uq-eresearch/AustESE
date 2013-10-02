@@ -74,7 +74,7 @@ public class HarpurTableToJson {
                     currentWork.put("workTitle", replaceStupidCharacters(workTitle));
                     workList.add(currentWork);
                 }
-                if (nextLine[2] == null || !nextLine[2].equals("")){
+                //if (!nextLine[2].equals("")){
                     // Create a version  (don't worry about issues, Harpur project only has to deal with one issue per version)
                     HashMap<String,String> v = new HashMap<String,String>();
                     String versionId = new ObjectId().toString();
@@ -93,7 +93,7 @@ public class HarpurTableToJson {
                     v.put("versionTitle", replaceStupidCharacters(versTitle));
                     versionList.add(v);
                     
-                    if (nextLine[2] == null || !nextLine[9].equals("")){
+                    //if (nextLine[2] == null || !nextLine[9].equals("")){
                         // Create an Artefact (part) for each version
                         //8 Source,9 Page no, 10 Notes, 11 Series, 12 Version no, 13 lines, 14 ms, 15 url
                         HashMap<String,String> a = new HashMap<String,String>();
@@ -139,8 +139,8 @@ public class HarpurTableToJson {
                             e.put("name", "\\\"" + nextLine[1] + "\\\" composed");
                             eventList.add(e);
                         }
-                    }
-                }
+                    //}
+                //}
             } else {
                 firstLine = false;
             }
