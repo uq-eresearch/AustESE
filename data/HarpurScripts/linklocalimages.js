@@ -17,14 +17,16 @@ mappings.forEach(function(m){
       var actualFileName = i.substring(i.indexOf("]") + 1).trim()
       // split on . to get file name and extension
       var fileTitle= actualFileName.split(".")[0];
-      var resource = db.fs.files.findOne({'metadata.title':fileTitle});
+      var resource = db.fs.files.findOne({'metadata.project':'21','metadata.title':fileTitle});
       if (resource){
         var resourceId = resource._resourceid;
         print(fileTitle);
-        db.artefacts.update({'_id': ObjectId(mappingData.artefact)},{'$set': {'metadata.facsimiles':[resourceId], '_revisions.0.facsimiles':[resourceId]}});
+        db.artefacts.update({'_id': ObjectId(mappingData.artefact)},{'$push': {'metadata.facsimiles':[resourceId], '_revisions.0.facsimiles':[resourceId]}});
       } else {
         print("couldn't find " + fileTitle);
       }
     }); 
 
 });
+
+//db.artefacts.update({'metadata.project': '21'},{'$unset': {'metadata.facsimiles':"", '_revisions.0.facsimiles':""}},{multi:true});

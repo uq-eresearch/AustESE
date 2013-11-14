@@ -54,12 +54,12 @@ mappings.forEach(function(m){
 
           // split on . to get file name and extension
           var fileTitle= finalFileName.split(".")[0];
-          var resource = db.fs.files.findOne({'metadata.title':fileTitle});
+          var resource = db.fs.files.findOne({'metadata.project':'21', 'metadata.title':fileTitle});
           if (resource){
             var resourceId = resource._resourceid;
             //print("found " + fileTitle);
             db.fs.files.update({"_id":resource._id},{$set:{'metadata.source':i.trim()}});
-            db.artefacts.update({'_id': ObjectId(mappingData.artefact)},{'$set': {'metadata.facsimiles':[resourceId], '_revisions.0.facsimiles':[resourceId]}});
+            db.artefacts.update({'_id': ObjectId(mappingData.artefact)},{'$push': {'metadata.facsimiles':resourceId, '_revisions.0.facsimiles':resourceId}});
           } else {
             print("couldn't find " + fileTitle);
           }
