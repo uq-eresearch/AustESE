@@ -21,7 +21,7 @@ mappings.forEach(function(m){
       if (resource){
         var resourceId = resource._resourceid;
         print(fileTitle);
-        db.artefacts.update({'_id': ObjectId(mappingData.artefact)},{'$push': {'metadata.facsimiles':[resourceId], '_revisions.0.facsimiles':[resourceId]}});
+        db.artefacts.update({'_id': ObjectId(mappingData.artefact)},{'$push': {'metadata.facsimiles':resourceId, '_revisions.0.facsimiles':resourceId}});
       } else {
         print("couldn't find " + fileTitle);
       }
@@ -29,4 +29,4 @@ mappings.forEach(function(m){
 
 });
 
-//db.artefacts.update({'metadata.project': '21'},{'$unset': {'metadata.facsimiles':"", '_revisions.0.facsimiles':""}},{multi:true});
+//db.artefacts.update({'metadata.project': '21'},{'$set': {'metadata.facsimiles':[], '_revisions.0.facsimiles':[]}},{multi:true});
