@@ -41,7 +41,7 @@ public class HarpurTableToJson {
         CSVReader reader = new CSVReader(new FileReader(inputFileName));
         String [] nextLine;
       //Work no.,Work title,Version no.,Date,First line of version,Title of version,Source,Bib. details
-      //0 Work no., 1 Work title,2 Version no.,3 Year, 4 Date,5 First line of version,6 Blank, 7 Title of version,8 Source,9 Page no, 10 Notes, 11 Series, 12 Version no, 13 lines, 14 ms, 15 url
+      //0 Work no., 1 Work title,2 Version no.,3 Year, 4 Date,5 First line of version,6 Blank, 7 Title of version,8 Source,9 Page no, 10 Notes, 11 Series,  12 lines, 13 ms, 14 url
         String versTitle, workTitle="";
         HashMap<String,String> currentWork = null;
         ArrayList<String> currentVersions = new ArrayList<String>();
@@ -82,13 +82,16 @@ public class HarpurTableToJson {
                     v.put("_id", "{ \"$oid\" : \"" + versionId + "\"}");
                     // push version id to currentVersions for later linking from work
                     currentVersions.add(versionId);
-                    v.put("name",nextLine[2]);
+                    String hnum = nextLine[2];
+                    v.put("name",hnum);
                     v.put("date", (!nextLine[4].equals("")? nextLine[4] + " ": "") + nextLine[3]);
-                    v.put("lines", nextLine[13]);
+                    v.put("lines", nextLine[12]);
                     v.put("firstLine", replaceStupidCharacters(nextLine[5]));
                     versTitle = nextLine[7];
                     if (versTitle.startsWith("^")){
                         versTitle = workTitle;
+                    } else if (versTitle.trim().equals("-")){
+                        versTitle = "Untitled";
                     }
                     v.put("versionTitle", replaceStupidCharacters(versTitle));
                     versionList.add(v);
@@ -121,22 +124,25 @@ public class HarpurTableToJson {
                         }
                         // Create temporary mappings that will be used later to match uploaded images with artefacts
                         HashMap<String,String> t = new HashMap<String,String>();
+                        t.put("hnum", hnum);
                         t.put("artefact",artefactId);
                         t.put("version", versionId);
-                        t.put("ms", nextLine[14]);
-                        t.put("imageUrl", nextLine[15]);
+                        t.put("ms", nextLine[13]);
+                        t.put("imageUrl", nextLine[14]);
                         mappingList.add(t);
                         
                         // generate link from version to artefact
                         v.put("artefacts", "[\"" + artefactId + "\"]");
-                        
                         if (!nextLine[0].equals("")){
                             // composition event for each work
                             HashMap<String,String> e = new HashMap<String,String>();
                             e.put("artefacts", "[\"" + artefactId + "\"]");
                             e.put("startDate", nextLine[3]);
+                        
                             e.put("eventType", "composition");
-                            e.put("name", "\\\"" + nextLine[1] + "\\\" composed");
+                            e.put("eventtags", "[\"composition\"]");
+                        
+                            e.put("name", "\\\"" + replaceStupidCharacters(workTitle) + "\\\"");
                             eventList.add(e);
                         }
                     //}
