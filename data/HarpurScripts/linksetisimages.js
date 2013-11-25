@@ -70,3 +70,4 @@ mappings.forEach(function(m){
 
 });
 // db.mappings.update({'_id':ObjectId("5283054ebc1fd4389f13a3ab")},{imageUrl:'http://setis.library.usyd.edu.au/ozedits/harpur/C378/00000009.jpg'})
+//db.artefacts.update({'metadata.project': '21'},{'$set': {'metadata.facsimiles':[], '_revisions.0.facsimiles':[]}},{multi:true});
