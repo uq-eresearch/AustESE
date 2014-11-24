@@ -18,23 +18,24 @@ mongoClient.open(function(err, mongoClient) {
   var db = mongoClient.db("foo");
   var grid = new Grid(db, 'fs');
 
-  var dir = "/Users/uqagerbe/Dropbox/Development/_harpur/+english/harpur/";
-  fs.readdir(dir, function(err, dirlist) { 
+  var dir = "/Users/uqagerbe/Desktop/finalharpur/_harpur/+english/harpur/";
+  fs.readdir(dir, function(err, dirList) { 
     if (err){
       return console.log(err);
     }
-    dirlist.forEach(function(anthDir){
-      var anthName = anthDir;
-      anthDir = dir + anthDir;
-      var anthDirStat = fs.statSync(anthDir);
-      if (anthDirStat.isDirectory()){
-        fs.readdir(anthDir, function(err, workList){
-          if (err){
-            return console.log('Error reading anthology dir', err);
-          }
-          workList.forEach(function(workDir){
+    //dirlist.forEach(function(anthDir){
+      //var anthName = anthDir;
+      //anthDir = dir + anthDir;
+      //var anthDirStat = fs.statSync(anthDir);
+      //if (anthDirStat.isDirectory()){
+        //fs.readdir(anthDir, function(err, workList){
+         // if (err){
+         //   return console.log('Error reading anthology dir', err);
+          //}
+
+          dirList.forEach(function(workDir){
             var workName = workDir;
-            workDir = anthDir + '/' + workDir + "/XML"; 
+            workDir = dir + workDir + "/XML"; 
             if (fs.existsSync(workDir)){
               fs.readdir(workDir, function(err, versionList){
                 if (err){
@@ -67,7 +68,7 @@ mongoClient.open(function(err, mongoClient) {
                         _resourceid: resId, 
                         shortname: hnum, 
                         filetype:'text/xml', 
-                        mvdpath: anthName + "/" + workName, 
+                        mvdpath: workName, 
                         project:'21'}}, function(err, result) {
                       if (err){
                         console.log(err);
@@ -80,9 +81,9 @@ mongoClient.open(function(err, mongoClient) {
               });
             }
           });
-        });
-      }
-    });
+        //});
+      //}
+    //});
   });
 
 // remove existing harpur files
@@ -98,7 +99,7 @@ db.fs.chunks.drop()
 // then update to move resourceid:
 /*
 
-db.fs.files.update({},{$rename: {"metadata._resourceid": "_resourceid" }}, false, true )
+// don't need to do this anymore db.fs.files.update({},{$rename: {"metadata._resourceid": "_resourceid" }}, false, true )
 */
 // then export 
 /*

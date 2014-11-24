@@ -1,5 +1,6 @@
-// remove harpur files (only deletes metadata)
-db.fs.files.remove({'project.metadata':'21'});
+// remove harpur transcription files
+
+db.fs.files.remove({'metadata.project':'21', 'metadata.filetype':'text/xml'})
 
 // remove orphaned file chunks
 var cursor = db.fs.chunks.find({}, {"_id" : 1, "files_id" : 1});

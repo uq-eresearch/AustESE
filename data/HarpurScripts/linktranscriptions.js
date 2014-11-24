@@ -4,17 +4,17 @@ var transcriptions = db.fs.files.find({'metadata.project':'21', 'metadata.shortn
 
 transcriptions.forEach(function(t){
   var shortname = t.metadata.shortname;
-  var resourceid = t["_resourceid"];
+  shortname = t.metadata.shortname.charAt(0).toUpperCase() + t.metadata.shortname.slice(1);
+  var resourceid = t.metadata["_resourceid"];
   // find the corresponding version using hnum
   var version = db.versions.findOne({'metadata.project':'21', 'metadata.name': shortname});
   if (version && version.metadata.artefacts && version.metadata.artefacts.length > 0){
+    print("attaching " + resourceid + " to " + shortname);
     // there should be only one artefact
     var artefact = version.metadata.artefacts[0];
     // attach as a diplomatic transcription
     db.artefacts.update({"_id": ObjectId(artefact)},{$set:{"metadata.transcriptions": [resourceid], "_revisions.0.transcriptions": [resourceid]}})
-  } else {
-    // TODO: might be a note, try to split shortname and attach to container artefact?
-  }
+  } 
 });
 
 /* remove version transcriptions that were created previously

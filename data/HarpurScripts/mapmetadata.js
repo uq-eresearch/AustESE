@@ -14,7 +14,7 @@ function paddy(n, p, c) {
 
 csv()
 .from.stream(fs.createReadStream(__dirname+'/HarpurData.csv'), {columns: true})
-.to.path(__dirname+'/A95export.csv', {columns: headers, header:true})
+.to.path(__dirname+'/A95export.csv', {columns: headers, header:true, lineBreaks: 'unix'})
 .transform( function(row){
 	var wTitle = row["Work title"];
 	if (wTitle) {
