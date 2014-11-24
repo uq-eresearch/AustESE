@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -85,9 +86,9 @@ public class HarpurTableToJson {
                     String hnum = nextLine[2];
                     v.put("name",hnum);
                     v.put("date", (!nextLine[4].equals("")? nextLine[4] + " ": "") + nextLine[3]);
-                    v.put("lines", nextLine[12]);
+                    v.put("lines", nextLine[11]);
                     v.put("firstLine", replaceStupidCharacters(nextLine[5]));
-                    versTitle = nextLine[7];
+                    versTitle = nextLine[6];
                     if (versTitle.startsWith("^")){
                         versTitle = workTitle;
                     } else if (versTitle.trim().equals("-")){
@@ -101,14 +102,14 @@ public class HarpurTableToJson {
                         //8 Source,9 Page no, 10 Notes, 11 Series, 12 Version no, 13 lines, 14 ms, 15 url
                         HashMap<String,String> a = new HashMap<String,String>();
                         String artefactId = new ObjectId().toString();
-                        String source = nextLine[8].trim();
-                        String pageNumbers = nextLine[9].trim();
+                        String source = nextLine[7].trim();
+                        String pageNumbers = nextLine[8].trim();
                         a.put("importRowNumber", rowNumber + "");
                         a.put("_id","{ \"$oid\" : \"" + artefactId + "\"}");
                         a.put("source", source + (!pageNumbers.equals("") ? " p" + pageNumbers: ""));
                         a.put("pageNumbers", pageNumbers);
-                        a.put("description", nextLine[10]); // actually notes field
-                        a.put("series", nextLine[11]);
+                        a.put("description", nextLine[9]); // actually notes field
+                        a.put("series", nextLine[10]);
                         a.put("date", (!nextLine[4].equals("")? nextLine[4] + " ": "") + nextLine[3]);
                         artefactList.add(a);
                         
@@ -127,8 +128,8 @@ public class HarpurTableToJson {
                         t.put("hnum", hnum);
                         t.put("artefact",artefactId);
                         t.put("version", versionId);
-                        t.put("ms", nextLine[13]);
-                        t.put("imageUrl", nextLine[14]);
+                        t.put("ms", nextLine[12]);
+                        t.put("imageUrl", nextLine[13]);
                         mappingList.add(t);
                         
                         // generate link from version to artefact
@@ -239,10 +240,10 @@ public class HarpurTableToJson {
      }
   }
   private static String replaceStupidCharacters(String input){
-      return input.replaceAll("Ò", "\\\\\"").replaceAll("Ó", "\\\\\"").replaceAll("Ñ", "-").replaceAll("Õ", "'").replaceAll("Ô", "'");
+      return input.replaceAll("\"", "\\\\\"").replaceAll("Ò", "\\\\\"").replaceAll("Ó", "\\\\\"").replaceAll("Ð","&ndash;").replaceAll("Ñ", "&mdash;").replaceAll("Õ", "'").replaceAll("Ô", "'").replaceAll("É","&hellip;");
   }
   public static String mapToString(HashMap<String,String> m) {
-      
+    String dateString = new Date().toGMTString();
     StringBuffer revisionsBuffer= new StringBuffer();
     StringBuffer metadataBuffer = new StringBuffer();
     String idProp = "";
@@ -271,6 +272,7 @@ public class HarpurTableToJson {
     revisionsBuffer.append(metadataBuffer.toString());
     revisionsBuffer.append("}");
     revisionsBuffer.append(idProp);
+    revisionsBuffer.append(",\"_generated\": \"" + dateString + "\"");
     revisionsBuffer.append("}");
     return revisionsBuffer.toString();
   } 
